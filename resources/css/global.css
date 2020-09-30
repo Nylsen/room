@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+
+/* @font-face {
+  font-family: 'Spartan';
+  src: url('/resources/assets/fonts/static/Spartan-Black.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-Bold.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-ExtraBold.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-ExtraLight.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-Light.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-Medium.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-Regular.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-SemiBold.ttf') format('truetype'),
+    url('/resources/assets/fonts/static/Spartan-Thin.ttf') format('truetype');
+} */
+
+:root {
+  --dark-gray: hsl(0, 0%, 63%);
+  --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Spartan, Fallback, sans-serif; */
+  font-family: 'Spartan';
+  color: var(--very-dark-gray);
+}
+
+html,
+body,
+app-root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
