@@ -1,17 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap'); */
 
-/* @font-face {
-  font-family: 'Spartan';
-  src: url('/resources/assets/fonts/static/Spartan-Black.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-Bold.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-ExtraBold.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-ExtraLight.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-Light.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-Medium.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-Regular.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-SemiBold.ttf') format('truetype'),
-    url('/resources/assets/fonts/static/Spartan-Thin.ttf') format('truetype');
-} */
+@font-face {
+  font-family: "Spartan";
+  src: url("../assets/fonts/Spartan-VariableFont_wght.ttf") format("truetype");
+}
 
 :root {
   --dark-gray: hsl(0, 0%, 63%);
@@ -23,7 +15,8 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: Spartan, Fallback, sans-serif; */
-  font-family: 'Spartan';
+  font-family: "Spartan";
+  font-weight: 500;
   color: var(--very-dark-gray);
 }
 

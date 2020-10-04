@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#000000" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./resources/assets/images/favicon-32x32.png" />
-    <link rel="stylesheet" href="./resources/css/global.css" />
+    <link rel="stylesheet" href="./resources/css/style.css" />
     <link rel="font" href="https://fonts.googleapis.com/css?family=Spartan" />
     <title>Frontend Mentor | Room homepage</title>
 
@@ -25,37 +25,118 @@
     </style>
   </head>
   <body>
-    <div>Home Shop About Contact</div>
-    <div>Discover innovative ways to decorate</div>
-    <div>
-      We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form
-      andnfunction in bringing your vision to life. Create a room in your own style with our collection and make your
-      property a reflection of you and what you love.
+    <div class="navbar">
+      <div id="wrapper">
+        <div id="wrapper-background"></div>
+        <a href="#popup-menu"> ||| </a> room
+      </div>
+      <div id="popup-menu">
+        <ul class="popup-list">
+          <li>Home</li>
+          <li>Shop</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <a class="cancel" href="#here"></a>
+      </div>
     </div>
-    <div>Shop now</div>
-    <div>We are available all across the globe</div>
-    <div>
-      With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally,
-      we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any
-      questions? Don't hesitate to contact us today.
+    <div class="content">
+      <div id="home">
+        <div class="gallery">
+          <div id="article-1" class="article shown">
+            <div class="article-img">
+              <img src="./resources/assets/images/mobile-image-hero-1.jpg" />
+              <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+              <a class="next" onclick="nextSlide(1)">&#10095;</a>
+            </div>
+            <div class="article-info">
+              <h2>Discover innovative ways to decorate</h2>
+              <p>
+                We provide unmatched quality, comfort, and style for property owners across the country. Our experts
+                combine form andnfunction in bringing your vision to life. Create a room in your own style with our
+                collection and make your property a reflection of you and what you love.
+              </p>
+              <h3>Shop now</h3>
+            </div>
+          </div>
+          <div id="article-2" class="article">
+            <div class="article-img">
+              <img src="./resources/assets/images/mobile-image-hero-2.jpg" />
+              <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+              <a class="next" onclick="nextSlide(1)">&#10095;</a>
+            </div>
+            <div class="article-info">
+              <h2>We are available all across the globe</h2>
+              <p>
+                With stores all over the world, it's easy for you to find furniture for your home or place of business.
+                Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store
+                locator. Any questions? Don't hesitate to contact us today.
+              </p>
+              <h3>Shop now</h3>
+            </div>
+          </div>
+          <div id="article-3" class="article">
+            <div class="article-img">
+              <img src="./resources/assets/images/mobile-image-hero-3.jpg" />
+              <a class="prev" onclick="nextSlide(-1)">&#10094;</a>
+              <a class="next" onclick="nextSlide(1)">&#10095;</a>
+            </div>
+            <div class="article-info">
+              <h2>Manufactured with the best materials</h2>
+              <p>
+                Our modern furniture store provide a high level of quality. Our company has invested in advanced
+                technology to ensure that every product is made as perfect and as consistent as possible. With three
+                decades of experience in this industry, we understand what customers want for their home and office.
+              </p>
+              <h3>Shop now</h3>
+            </div>
+          </div>
+        </div>
+        <div class="about">
+          <img src="./resources/assets/images/image-about-dark.jpg" />
+          <div class="article-info">
+            <h2>About our furniture</h2>
+            <p>
+              Our multifunctional collection blends design and function to suit your individual taste. Make each room
+              unique, or pick a cohesive theme that best express your interests and what inspires you. Find the
+              furniture pieces you need, from traditional to contemporary styles or anything in between. Product
+              specialists are available to help you create your dream space.
+            </p>
+          </div>
+          <img src="./resources/assets/images/image-about-light.jpg" />
+        </div>
+      </div>
     </div>
-    <div>Manufactured with the best materials</div>
-    <div>
-      Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to
-      ensure that every product is made as perfect and as consistent as possible. With three decades of experience in
-      this industry, we understand what customers want for their home and office.
-    </div>
-    <div>About our furniture</div>
-    <div>
-      Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or
-      pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need,
-      from traditional to contemporary styles or anything in between. Product specialists are available to help you
-      create your dream space.
-    </div>
-    <div class="attribution">
+
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
       <a href="#">Nylsen</a>.
-    </div>
+    </div> -->
   </body>
+  <script>
+    window.onscroll = function () {
+      var nav = document.getElementById("wrapper-background");
+      if (window.pageYOffset > 100) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    };
+
+    let shownIndex = 0;
+    const articles = ["article-1", "article-2", "article-3"];
+    const nextSlide = (direction) => {
+      shownIndex += direction;
+      shownIndex = shownIndex > 2 ? 0 : shownIndex < 0 ? 2 : shownIndex;
+      articles.forEach((o) => {
+        let article = document.getElementById(o);
+        if (o !== articles[shownIndex]) {
+          article.classList.remove("shown");
+        } else {
+          article.classList.add("shown");
+        }
+      });
+    };
+  </script>
 </html>
