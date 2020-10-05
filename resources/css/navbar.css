@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   background: transparent;
   color: white;
@@ -50,7 +50,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
   transition: opacity 200ms;
@@ -78,6 +78,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  font-size: 14px;
   color: black;
   font-weight: bold;
   user-select: none;
@@ -89,7 +90,6 @@
   width: 22px;
   height: 3px;
   bottom: 15px;
-  /* left: calc(50% - 10px); */
   background-color: black;
 }
 
@@ -187,4 +187,42 @@
 #toggle-menu-btn.is-active .button-bar--3 {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+/* DESKTOP DISPLAY */
+@media only screen and (min-width: 1280px) {
+  .navbar {
+    position: absolute;
+    top: 30px;
+  }
+  #wrapper {
+    justify-content: flex-start;
+  }
+  #wrapper-background,
+  #toggle-menu-btn {
+    display: none;
+  }
+  #popup-menu {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    height: 80px;
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent;
+  }
+  .popup-list {
+    padding-left: 160px;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .popup-list > li {
+    color: white;
+  }
+  .popup-list > li:hover:after {
+    background-color: white;
+  }
+  .cancel {
+    display: none;
+  }
 }
